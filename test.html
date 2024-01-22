@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./class Person.js">  </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: bounce 2s infinite alternate, changeColor 2s infinite alternate;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-100px);
+            }
+        }
+
+        @keyframes changeColor {
+            0%, 100% {
+                background-color: #3498db;
+            }
+            50% {
+                background-color: #e74c3c;
+            }
+        }
+
+        .ball:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+</body>
+</html>
