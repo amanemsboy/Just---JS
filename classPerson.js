@@ -554,6 +554,69 @@ let maxNumberReducing = mapNumber.reduce(function (max, accr) {
 
 console.log(maxNumberReducing);
 
+// setTimeout(function () {
+//     console.log('I am doing something after 3 sec');
+// },3000)
 
+function TesteNumbers (x) {
+    console.log("Teste de função");
+    x()
+    
+}
+
+TesteNumbers(function x () {
+    console.log("Olá Mundo");
+})
+
+const message = "Hello";
+
+
+let hash = 6;
+
+for (let i = 0; i < hash; i++) {
+   let hashString = '';
+    for (let j = 0; j <= i; j++) {
+        hashString += "#";
+    }
+    console.log(hashString)
+  }
+
+
+
+let under = 8;
+let chaseBord = " "
+
+for (i = 0; i < under; i++) {
+    for(j = 0; j < under; j++) {
+        
+   chaseBord += (i + j) % 2 === 0 ? " " : "#"
+    }
+    chaseBord += '\n'
+}
+
+console.log(chaseBord)
+
+function power(base, exponent = 2) {
+    let result = 1;
+    for (let count = 0; count < exponent; count++) {
+    result *= base;
+    }
+    return result;
+    }
+    
+    console.log(power(2, 6));
+
+    
+function minNumber (numberOne  , numberTwo){
+   
+    
+   let parNumberOne = Math.min (...numberOne);
+   let minNUmberTwo = Math.min (...numberTwo)
+   console.log(`Minimun NUmber of parametr One is ${parNumberOne} Minimun NUmber of parametr One is ${minNUmberTwo}`);
+
+
+    }
+
+minNumber([2, 4, 6, 56], [56, 34, 45])
 
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./classPerson.js">  </script>
+    <link rel="stylesheet" href="./style.css" />
+    
+</head>
+<body>
+    
+<dev class="nubersList">
+<h1 id="one" class="red"> Apple </h1>
+<h1 id="two"  class="green"> Amazon</h1>
+<h1 id="three" class="blue">  Google </h1>
+<h1 id="four" class="red">  Microsoft </h1>
+
+<br><br>    
+
+<div class="ElementsBtn">
+<button id="btn-one" onclick="addElement()"> Add Elements </button>
+<button id="btn-two" onclick="addElement()"> Add Elements </button>
+<button id="btn-three" onclick="addElement()"> Add Elements </button>
+<button id="btn-four" onclick="addElement()"> Add Elements </button>
+
+
+</div>
+<h1>Form</h1>
+
+<inpur class="input-one"></inpur>
+<inpur class="input-one"></inpur>
+<inpur class="input-one"></inpur>
+
+<script src="./scripte.js"></script>
+</body>
+</html>
+

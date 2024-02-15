@@ -3,55 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./class Person.js">  </script>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-
-        .ball {
-            width: 50px;
-            height: 50px;
-            background-color: #3498db;
-            border-radius: 50%;
-            animation: bounce 2s infinite alternate, changeColor 2s infinite alternate;
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-100px);
-            }
-        }
-
-        @keyframes changeColor {
-            0%, 100% {
-                background-color: #3498db;
-            }
-            50% {
-                background-color: #e74c3c;
-            }
-        }
-
-        .ball:hover {
-            transform: scale(1.2);
-        }
-    </style>
-</head>
-<body>
-    <div class="ball"></div>
-
+    <!-- <script defer src="./classPerson.js">  </script> -->
+    <link rel="stylesheet" href="./style.css" />
     
+</head>
+
+<body>
+    
+<dev class="nubersList">
+<h1 id="one"   class="green"> Apple   </h1>
+<h1 id="two"   class="green"> Amazon  </h1>
+<h1 id="three" class="green">  Google </h1>
+<h1 id="four"  class="green">  Microsoft </h1>
+</dev>
+
+<br><br>    
+
+<div class="ElementsBtn">
+<button id="btn-one" onclick="firstclick()"> First Click </button>
+<button id="btn-two" onclick="secondClick()"> Second Click </button>
+<button id="btn-three" onclick="theerdClick()"> Theerd Click  </button>
+<button id="btn-four" onclick="rourthClick()"> Fourth Click </button>
+
+
+<h2> <a href="https://WWW.amanueltesfay.online"> THIS IS TAST PAGE </a> </h2>
+
+
+</div>
+<!--<h1>Form</h1>
+
+<div class="input-form">
+    <input class="input-one"></input> <br /> <br />
+    <input class="input-one"></input> <br /> <br />
+    <input class="input-one"></input>
+    </div>
+
+<ul id="personsList"></ul> -->
+
+
+<!-- Script for the page -->
+
+
+<div class="grandparent" id="grandparent-id">
+    <div class="parent">
+        <div class="child"> </div>
+        <div class="child"> </div>
+    </div>
+<div class="parent">
+    <div class="child" id="child-four"></div>
+    <div class="child"></div>
+</div>
+</div>
+
+<form id="registration-form">
+    First Name: <input id="firstName" type="text" name="name" placeholder="First Name"><br />
+    Last Name : <input id="lastName" type="text" name="lastName" placeholder="Last Name"><br />
+    
+    <button type="submit" id="button-Id"> Submit </button>
+
+    <h2 id="result">  </h2>
+
+    </form>
+
+
+<!-- <script src="./scripte.js"></script> -->
+<script src="./jquery-3.7.1.js"></script>
+<script src="./tesJquery.js"></script>
 
 </body>
 </html>
+

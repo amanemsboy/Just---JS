@@ -1,0 +1,24 @@
+// let changeColor = document.getElementById("four");
+
+// changeColor.className = "green"
+
+// document.getElementById("one").className = "blue"
+
+// console.log(document.querySelector(".red"));
+
+let classNameGeter = (document.getElementsByClassName("red"))
+
+    console.log(classNameGeter.item[0]); 
+
+    console.log(document.querySelectorAll("h1"))
+
+console.log(document.getElementsByTagName("h1")); 
+
+
+let li = document.querySelectorAll("green")
+
+for  (var i=0; i<li.length; i++){
+    var selecetName = li[i]
+    selecetName.className ="blue"
+
+   }
