@@ -61,14 +61,14 @@ body {
         
     }
     /* When the mouse hovers over a button, change its color and shadow to show it' s active */
-    .ElementsBtn button:hover {
+    /* .ElementsBtn button:hover {
         transform: scale(2);
         box-shadow: 0 16px 20px 0 rgba(0
             ,0 ,0/12),
             0  8px 20px 0 rgba(0 
                 ,0 ,0/24);
 
-            }
+            } */
             /* The animation for the buttons when they are clicked. It makes them grow in size and slightly  darker*/
 
 

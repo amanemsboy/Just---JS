@@ -92,8 +92,61 @@ $("button").attr('disabled', '');
 $("button").removeAttr("disabled");
 
 //next 
-$("#one").next().css( { backgroundColor : "green"} );
+// $("#one").next().css( { backgroundColor : "green"} );
 
-//next All 
-$("#two").nextAll().css( { border : "13px sold red"} );
+//nextAll
+// $("#btn-three").nextAll().css({border : "13px solid red"});
+
+//previous 
+// $("#two").prev().css( {"color": "red" });
+
+//previousAll
+// $("#four").prevAll().css({border:"5px solid blue"});
+
+$("#btn-four").click(function(){
+    $(this).hide() ;
+});
+
+$(".link").click(function(e){
+    e.preventDefault(); // prevent default action of <a> tag
+    $(this).prev().show()
+});
+
+
+$("#registration-form").on("submit", function(e){
+    e.preventDefault();
+    let firstInput = $("input[name = 'firstName']").val();
+    let secondInput = $("input[name = 'lastName']").val();
+    console.log(firstInput);
+    console.log(secondInput)
+
+    if ($.isNumeric(firstInput) && $.isNumeric(secondInput)) {
+        let sum = parseInt(firstInput) + parseInt(secondInput);
+        $(this).append(` <p>  ${sum}  <p>`);
+    }
+
+    else {
+        $(this).append("<h1> The inpute  is not valid </h1>")
+    }
+
+})
+
+// $("#btn-one").click(function() {
+//     $(".nubersList" ).slideToggle();
+// })
+
+// $("#btn-one").click(function() {
+//     $(".nubersList" ).slideToggle(3000);
+// })
+
+// $("#btn-one").click(function() {
+//     $(".nubersList").fadeToggle(4000);
+// })
+
+$(".nubersList").click(function() {
+    $("#btn-one")
+    .animate({width: "250px"}, 2000)
+    .animate({fontSize: "20px"}, 1000);
+})
+
 

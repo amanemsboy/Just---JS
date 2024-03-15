@@ -156,23 +156,166 @@
 
   
 
-document.getElementById("registration-form").addEventListener("submit",
-function (e) {
-  e.preventDefault(); 
+// document.getElementById("registration-form").addEventListener("submit",
+// function (e) {
+//   e.preventDefault(); 
 
-  let firstNameInpute = document.querySelector("#firstName");
-  let lastNameInpute = document.querySelector("#lastName");
+//   let firstNameInpute = document.querySelector("#firstName");
+//   let lastNameInpute = document.querySelector("#lastName");
 
-  if (firstNameInpute.value.trim() === "" || lastNameInpute.value.trim() === "")
+//   if (firstNameInpute.value.trim() === "" || lastNameInpute.value.trim() === "")
   
-  {
-    alert("All Filldes Are Reqaured");
-    firstNameInpute.style.backgroundColor = lastNameInpute.style.backgroundColor = "pink"
-  } else {
-        alert("Submited Sucessfully Please Check Your Email")
-        document.getElementById( "result" ).textContent = `${firstNameInpute.value} 
-        ${lastNameInpute.value}`
+//   {
+//     alert("All Filldes Are Reqaured");
+//     firstNameInpute.style.backgroundColor = lastNameInpute.style.backgroundColor = "pink"
+//   } else {
+//         alert("Submited Sucessfully Please Check Your Email")
+//         document.getElementById( "result" ).textContent = `${firstNameInpute.value} 
+//         ${lastNameInpute.value}`
         
-  }
+//   }
 
-})
+// })
+
+// console.log("This fisrt call")
+
+// const asynchronousMethoud = function (sec) {
+//       setTimeout (() => {
+//         console.log(`Asynchronous Method Called After ${sec} Sec`), sec * 10
+//       }, sec);
+// }
+
+// asynchronousMethoud(3000)
+
+// console.log("I am the last on")
+
+// fetch("https://randomuser.me/api").then( function (res) {
+//   // console.log(res)
+//   return  res.json();
+// }).then((data) => console.log(data)); 
+
+
+// fetch("https://randomuser.me/api")
+// .then((res) => res.json())
+// .then((data) => console.log(data.results[0]))
+// .catch(err => console.log('Error', err)); 
+
+async function logData() {
+  try {
+    let response = await fetch("https://randomuser.me/api");
+    let data = await response.json();
+    const user = data.results[0];
+    console.log(user);
+  } catch (error) {
+    console.log('There is an error');
+  }
+}
+
+logData()
+
+let mypromise = new Promise((resolve, reject) => {
+  const condtion = 5 - 5;
+  if (condtion == 0) {
+    resolve ("The condition is true");
+  } else {
+    reject ('Condition failed')
+  }
+});
+
+mypromise.then((result) => console.log(result))
+         .catch((error) => console.log(error));
+
+function alarm (person, delay) {
+return new Promise ((resolve, reject) => {
+
+  if (delay < 0) {
+    reject("Alarm delay can not be negative");
+  }
+  setTimeout(() => {
+    resolve(`Wake up, ${person}!`);
+  } , delay);
+})};
+
+// alarm("John", 2).then(result => console.log(result))
+// .catch(error => console.log(error));
+
+
+async function getUp() {
+  try {
+    let data = await alarm("Bob", -1000);
+    console.log(data)
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getUp();
+
+async function displayData() {
+  try {
+    let response = await fetch("https://randomuser.me/api");
+    let data = await response.json();
+    let user = data.results[0];
+
+    console.log(user.name);
+
+    const userContainer = document.getElementById("container");
+    userContainer.innerHTML = `
+        <img src="${user.picture.large}" alt="User Image">
+        <h3> Name: ${user.name.first} ${user.name.last}</h3>
+        <h3> Email: ${user.email}</h3>
+        <h3> Location: ${user.location.city}, ${user.location.country} </h3>
+    `;
+  } catch (error){
+    console.log(error)
+  }
+}
+displayData();
+
+
+
+
+let stocks = {
+  fruits: ["Strawberry", "Grapes", "Banana", "Apple"],
+  liquid: ["Water", "Ice"],
+  holder: ["Cone", "Cup", "Stick"],
+  toppings: ["Chocolate", "Peanuts"]
+};
+
+let order = (fruit_name, call_prodaction) => {
+  setTimeout(() => {
+    console.log(`${stocks.fruits[fruit_name]} has been selected`);
+    call_prodaction();
+  }, 2000);
+};
+
+let prodaction = () => {
+  setTimeout(() => {
+    console.log("Prodaction has started");
+
+    setTimeout(() => {
+      console.log("The fruit has been chopped");
+
+      setTimeout(() => {
+        console.log(
+          `${stocks.liquid[0]} and ${stocks.liquid[1]} was been selectd}`
+        );
+        setTimeout(() => {
+          console.log("The machine was started");
+
+          setTimeout(() => {
+            console.log(`ice cream was pleased on ${stocks.holder[0]} `);
+          });
+
+          setTimeout(() => {
+            console.log(`${stocks.toppings[0]} was added a toppings`);
+            setTimeout(() => {
+              console.log("Serve ice cream");
+            }, 2000);
+          }, 3000);
+        }, 1000);
+      }, 1000);
+    }, 2000);
+  }, 0o0);
+};
+order(2, prodaction);
